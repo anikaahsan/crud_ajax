@@ -1,0 +1,17 @@
+<html>
+  <form method="post" action="{% url 'employee_update' form.instance.pk %}" class="js-book-update-form">
+      {% csrf_token %}
+      <div class="modal-header">
+        <h3 class="modal-title">Update employee</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% include 'partial_employee_form.html' %}
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <button type="submit" class="btn btn-primary">Update employee</button>
+      </div>
+    </form>
+
+</html> 

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block javascript %}
+   <script src="{% static 'employee.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  
+
+ 
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-10">
+      <h2 class="page-header text-center "  style="margin:1rem;" >All employees</h2>
+    </div>
+    <div class="col">
+      <p>
+        <button type="button" class="btn btn-primary js-create-employee" data-url="{% url 'create' %}"  style="margin:1rem;">
+        
+          <span class="glyphicon glyphicon-plus"></span>
+          Add Employee
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+  
+  <table class="table" id= "employee-table">
+    <thead>
+      <tr class="table-dark">
+        <th>id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>edit</th>
+        <th>delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+       {% include 'partial_employee_list.html' %}
+    </tbody>
+  </table>
+
+  
+
+
+  <div class="modal fade" id="modal-book">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      </div>
+    </div>
+ </div>
+
+{% endblock %}
+

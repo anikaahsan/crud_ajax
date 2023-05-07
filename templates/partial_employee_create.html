@@ -1,0 +1,23 @@
+<html>
+
+<form method="post" action="{% url 'create' %}" class="js-employee-create-form">
+  {% csrf_token %}
+  <div class="modal-header">
+    <h3 class="modal-title">Create a new employee</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+
+  <div class="modal-body">
+    {% include 'partial_employee_form.html' %}
+   
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+    <button type="submit" class="btn btn-primary">Create employee</button>
+  </div>
+  </form>
+
+  </html>
+
+
+  

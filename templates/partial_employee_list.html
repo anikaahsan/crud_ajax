@@ -1,0 +1,26 @@
+{% for employee in employees %}
+<tr>
+  <td>{{ employee.pk}}</td>
+  <td>{{ employee.name }}</td>
+  <td>{{ employee.address }}</td>
+  <td>{{ employee.phone_number }}</td>
+  <td>
+    <button type="button"
+            class="btn btn-warning btn-sm js-update-book"
+            data-url="{% url 'employee_update' employee.pk %}">
+      <span class="glyphicon glyphicon-pencil"></span> Edit
+    </button>
+  </td>
+  <td>
+    <button type="button"
+              class="btn btn-danger btn-sm js-delete-book"
+              data-url="{% url 'delete' employee.pk %}">
+        <span class="glyphicon glyphicon-trash"></span> Delete
+      </button>
+  </td>
+</tr>
+{% empty %}
+<tr>
+  <td colspan="7" class="text-center bg-warning">No employee</td>
+</tr>
+{% endfor %}
